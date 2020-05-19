@@ -11,9 +11,10 @@
         </header> 
         <div class="row text-center" style="display: flex; flex-wrap: wrap;">
             <!-- HÄR SKA VI LOOPA GENOM ALLA INLÄGG  -->
-            <% posts.forEach(function(post) { %>  
+            <% posts.forEach(function(post) { %> 
+             
           <div class="col-md-3 col-sm-6">
-      
+  
             <div>
               <div class="thumbnail">
                 <h4>  <!-- HÄR SKA VI VISA VARJE INLÄGGS TITEL  --> <%= post.title %> </h4>
@@ -27,6 +28,7 @@
             <p>
                 <!-- HÄR BEHÖVER VI INLÄGGES ID SÅ ATT VI KAN KOMMA TILL SIDAN FÖR SPECIFIKT INLÄGG  -->
               <a href="/posts/<%= post._id %>" class="btn btn-primary">Mer info</a>
+           
             </p>
           </div>
            <!-- HÄR AVSLUTAR VI LOOPEN -->
