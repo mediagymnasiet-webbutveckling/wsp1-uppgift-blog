@@ -1,0 +1,36 @@
+<%- include("./../partials/header") %>   
+  <div class="container">
+        <header class="jumbotron">
+          <div>
+            <h1>Välkommen till en blog om inget särskilt</h1>
+            <p>Här kommer det postas irrevelanta saker i kursen Webbserverprogrammering 1</p>
+            <p>
+              <a class="btn btn-primary btn-lg" href="/posts/new">Skapa nytt inlägg</a>
+            </p>
+          </div>
+        </header> 
+        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+            <!-- HÄR SKA VI LOOPA GENOM ALLA INLÄGG  -->
+            <% posts.forEach(function(post) { %>  
+          <div class="col-md-3 col-sm-6">
+      
+            <div>
+              <div class="thumbnail">
+                <h4>  <!-- HÄR SKA VI VISA VARJE INLÄGGS TITEL  --> <%= post.title %> </h4>
+                <!-- HÄR SKA VI HA VARJE INLÄGGS BILDADRESS  -->
+                <img src="<%= post.image %>">
+              </div>
+            </div>
+            <div class="caption">
+              <h4><!-- HÄR SKA VI VISA VARJE INLÄGGS TITEL  --><%= post.title %></h4>
+            </div>
+            <p>
+                <!-- HÄR BEHÖVER VI INLÄGGES ID SÅ ATT VI KAN KOMMA TILL SIDAN FÖR SPECIFIKT INLÄGG  -->
+              <a href="/posts/<%= post._id %>" class="btn btn-primary">Mer info</a>
+            </p>
+          </div>
+           <!-- HÄR AVSLUTAR VI LOOPEN -->
+          <% }); %>
+        </div>
+      </div>
+  <%- include("./../partials/footer") %>
